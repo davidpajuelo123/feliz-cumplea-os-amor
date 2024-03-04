@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #F7E2F9;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: #FCBEFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  #buttonYes {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+ 
+
+  #buttonNo {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff9191;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+   
+  }
+
+  #buttonNo:hover {
+    background-color: #ff6b6b;
+  }
+
+  /* Nuevas clases para las animaciones */
+  .fade-out {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in, transform 1s ease-in;
+  }
+
+
+  .heart{
+            position: absolute;
+            bottom: -150px;
+            left: 3%;
+            font-size: 20px;
+            animation: corazon 3s linear infinite;
+            z-index: -1;
+        }
+        .heart:nth-child(1){
+            color: rgb(247, 35, 7);
+            font-size: 40px;
+            left: 4%;
+            animation-duration: 3s;
+            animation-delay: 1s;
+        }
+        .heart:nth-child(2){
+          color: rgb(247, 35, 7);
+            font-size: 40px;
+            left: 16%;
+            animation-duration: 4s;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(3){
+          color: rgb(247, 35, 7);
+            font-size: 45px;
+            left: 20;
+            animation-duration: 3s;
+            animation-delay: 3s;
+        }
+        .heart:nth-child(4){
+          color: rgb(247, 35, 7);
+            font-size: 40px;
+            left: 10%;
+            animation-duration: 3s;
+            animation-delay: 2s;
+        }
+        .heart:nth-child(5){
+          color: rgb(247, 35, 7);
+            font-size: 35px;
+            left: 81%;
+            animation-duration: 3s;
+            animation-delay: 3s;
+        }
+        .heart:nth-child(6){
+          color: rgb(247, 35, 7);
+            font-size: 45px;
+            left: 92%;
+            animation-duration: 4s;
+            animation-delay: 3s;
+        }
+        .heart:nth-child(7){
+          color: rgb(247, 35, 7);
+            font-size: 50px;
+            left: 88%;
+            animation-duration: 4s;
+            animation-delay: 2s;
+        }
+        .heart:nth-child(8){
+          color: rgb(247, 35, 7);
+            font-size: 45px;
+            left: 74%;
+            animation-duration: 3s;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(9){
+          color: rgb(247, 35, 7);
+            font-size: 50px;
+            left: 40%;
+            animation-duration: 2.2s;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(10){
+          color: rgb(247, 35, 7);
+            font-size: 50px;
+            left: 46%;
+            animation-duration: 2.6s;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(11){
+          color: rgb(247, 35, 7);
+            font-size: 50px;
+            left: 54%;
+            animation-duration: 2s;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(12){
+          color: rgb(247, 35, 7);
+            font-size: 50px;
+            left: 60%;
+            animation-duration: 2.5s;
+            animation-delay: 2s;
+        }
+        
+        
+
+        @keyframes corazon{
+        0%{
+            bottom: 0;
+        
+        } 30%{
+          transform: translateX(30px);
+        }
+        100%{
+            bottom:100vh;
+        }   
+        }
+
+        @keyframes fontAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.foto {
+    border: 2px solid #ccc; /* Borde de 2px de ancho y color gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno de 10px */
+    width: 500px; /* Ancho del div */
+    margin: 0 auto; /* Centrar el div horizontalmente */
+    text-align: center; /* Centrar el contenido del div */
+    background-color: #f9f9f9; /* Color de fondo gris claro */
+}
+
+.foto img {
+    max-width: 100%; /* La imagen no sobrepasa el ancho del contenedor */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
+.foto p {
+    font-size: 30px; /* Tamaño de fuente 18px */
+    color: #333; /* Color del texto oscuro */
+    margin-top: 10px; /* Espacio superior de 10px */
+}
+.foto1 {
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    padding: 2px;
+    max-width: 500px; /* Cambiamos el ancho máximo del contenedor */
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.foto1 img {
+  max-width: 150%;
+  max-height: 400px; /* Cambia este valor según lo que necesites */
+    
+}
+
+.foto1 p {
+    font-size: 16px; /* Cambiamos el tamaño de fuente */
+    color: #333;
+    margin-top: 10px;
+}
+
+.foto2 {
+    border: 2px solid #ccc; /* Borde de 2px de ancho y color gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno de 10px */
+    width: 400px; /* Ancho del div */
+    margin: 0 auto; /* Centrar el div horizontalmente */
+    text-align: center; /* Centrar el contenido del div */
+    background-color: #f9f9f9; /* Color de fondo gris claro */
+}
+
+.foto2 img {
+    max-width: 100%; /* La imagen no sobrepasa el ancho del contenedor */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
+.foto2 p {
+    font-size: 15px; /* Tamaño de fuente 18px */
+    color: #333; /* Color del texto oscuro */
+    margin-top: 10px; /* Espacio superior de 10px */
+}
+
+
+</style>
+<title>¡Feliz Cumpleaños leila! </title>
+</head>
+<body style="margin: 0;">
+  <div class="container" style="position: relative;">
+    <h1>¡ LEILA FELIZ CUMPLEAÑOS ! 🎉🎂</h1>
+    <p>Amor elije una opción:</p>
+    <button id="buttonYes">¡Claro!</button>
+    <button id="buttonNo">¡Quizás otro día!</button>
+  </div>
+  <img id="backgroundImage" src="tarta.gif" style="position: fixed; bottom: 0; left: 30%; transform: translateX(-50%); width: 190px; z-index: -1;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/FE_KnGLsX5c?si=mwQ40wrS3L78pV23" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   
+
+  <style>
+.cinta {
+  position: absolute;
+  bottom: 0;
+  font-size: 20px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 25px solid rgb(238, 143, 130);
+  animation: cintaAnimation 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes cintaAnimation {
+  0% {
+      bottom: -150px;
+  }
+  30% {
+      transform: translateX(30px);
+  }
+  100% {
+      bottom: 100vh;
+  }   
+}
+
+.cinta:nth-child(1) {
+  border-top-color: rgb(206, 241, 5);
+  left: 12%;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.cinta:nth-child(2) {
+  border-top-color: rgb(238, 143, 130);
+  left: 16%;
+  animation-duration: 2.5s;
+  animation-delay: 1s;
+}
+
+.cinta:nth-child(3) {
+  border-top-color: rgb(11, 14, 214);
+  left: 24%;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+.cinta:nth-child(4) {
+  border-top-color: rgb(245, 10, 80);
+  left: 32%;
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+
+.cinta:nth-child(5) {
+  border-top-color: rgb(10, 223, 28);
+  left: 40%;
+  animation-duration: 3.2s;
+  animation-delay: 1s;
+}
+.cinta:nth-child(6) {
+  border-top-color: rgb(238, 143, 130);
+  left: 48%;
+  animation-duration: 2.3s;
+  animation-delay: 1s;
+}
+
+.cinta:nth-child(7) {
+  border-top-color: rgb(52, 9, 172);
+  left: 56%;
+  animation-duration: 2.8s;
+  animation-delay: 1s;
+}
+
+.cinta:nth-child(8) {
+  border-top-color: rgb(210, 245, 10);
+  left: 64%;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+.cinta:nth-child(9) {
+  border-top-color: rgb(179, 26, 6);
+  left: 72%;
+  animation-duration: 2s;
+  animation-delay: 2s;
+}
+.cinta:nth-child(10) {
+  border-top-color: rgb(177, 15, 109);
+  left: 86%;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+.cinta:nth-child(11) {
+  border-top-color: rgb(95, 157, 182);
+  left: 81%;
+  animation-duration: 2.5s;
+  animation-delay: 2s;
+}
+
+.cinta:nth-child(12) {
+  border-top-color: rgb(5, 106, 238);
+  left: 85%;
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+/* Repite lo mismo para las demás cintas */
+
+
+
+</style>
+  </style>
+  <div class="cintas">
+    <div class="cinta"></div>
+    <div class="cinta"></div>
+    <div class="cinta"></div>
+    <div class="cinta"></div>
+    <div class="cinta"></div>
+    <div class="cinta"></div>
+    <div class="cinta"></div>
+    <div class="cinta"></div>
+    <div class="cinta"></div>
+    <div class="cinta"></div>
+    <div class="cinta"></div>
+    <div class="cinta"></div>
+</div>
+ 
+ 
+ 
+ <script>
+    
+    buttonYes.addEventListener("click", () => {
+    const backgroundImage = document.getElementById("backgroundImage");
+    backgroundImage.style.display = "none";
+    document.body.style.transition = "background-color 3s ease-in-out";
+    document.body.style.backgroundColor = "#FFC0CB";
+
+    setTimeout(() => {
+        const container = document.createElement('div');
+        container.classList.add('container');
+        container.style.backgroundColor = '#E6E6FA';
+
+        setTimeout(() => {
+            const cryingCatContainer = document.createElement('div');
+            cryingCatContainer.innerHTML = '<img src="gatitoalegre.gif" alt="gato sonriendo">';
+            const cryingCatText = document.createElement('p');
+            cryingCatText.textContent = '¡Hoy es tu día especial! Vamos a hacerlo increíble.';
+            cryingCatContainer.appendChild(cryingCatText);
+
+            container.appendChild(cryingCatContainer);
+
+            setTimeout(() => {
+                document.body.style.transition = "background-color 4s ease-in-out";
+                document.body.style.backgroundColor = "#EEAFD5";
+
+                setTimeout(() => {
+                    container.innerHTML = `
+                        <div class="foto1">
+                            <img src="amor3.jpeg" alt="amor">
+                            <p>¡FELIZ CUMPLEAÑOS AMOR TE AMO MUCHO! 🎉❤️</p>
+                        </div>
+                    `;
+
+                    setTimeout(() => {
+                        container.innerHTML = `
+                            <div class="foto2">
+                                <img src="amor2.jpeg" alt="amor">
+                                <p>¡FELIZ CUMPLEAÑOS, AMOR MÍO! QUE ESTE DÍA ESTÉ COLMADO DE SONRISAS, MOMENTOS ESPECIALES Y TODO EL AMOR QUE MERECES. TE ADORO. 🎂❤️</p>
+                            </div>
+                        `;
+
+                        setTimeout(() => {
+                            container.innerHTML = `
+                            <video width="640" height="480" controls >
+                                    <source src="lali.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="container">
+                     <p>TE MERECES LO MEJOR Y HARÉ TODO LO POSIBLE PARA .</p>
+                     <p> POSIBLE PARAASEGURARME DE QUE ASÍ SEA</p>
+                     </div>
+
+                            `;
+                            setTimeout(() => {
+                            container.innerHTML = `
+                            <video width="640" height="480" controls >
+                                    <source src="video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                               
+                                <p>¡GRACIAS POR HACERME MUY FELIZ TE AMO ❤️!</p>
+                            `;
+                        }, 35000);
+                        }, 8000); // Aumenté el tiempo para dar más tiempo de visualización
+                    }, 8500);
+                }, 4200);
+            }, 2000);
+
+            document.body.innerHTML = '';
+            document.body.appendChild(container);
+        }, 1000);
+    });
+});
+
+
+
+    buttonNo.addEventListener("click", () => {
+      const backgroundImage = document.getElementById("backgroundImage");
+      backgroundImage.style.display = "none";
+      document.body.style.transition = "background-color 3s ease-in-out";
+      document.body.style.backgroundColor = "#333";
+
+      setTimeout(() => {
+        document.body.innerHTML = `
+          <div class="container" style="background-color: #456789;">
+            <img src="llorando.gif" alt="gato triste">
+            <p>¡Oh no! ¿Por qué no hoy?</p>
+          </div>
+        `;
+
+        setTimeout(() => {
+          document.body.innerHTML = `
+            <div class="container" style="background-color: #456789;">
+              <div class="foto1">
+              <img src="amor1.jpeg" alt="amor1">
+            
+              <p>En este día tan especial , quería estar contigo, celebrarte y recordarte cuánto significas para mí. Así que, aunque hoy quizás no sea el día
+                 perfecto para ti, para mí siempre será un día de celebración por tenerte a mi lado</p>
+                </div> 
+            </div>
+          `;
+
+          setTimeout(() => {
+            document.body.style.transition = "background-color 4s ease-in-out";
+            document.body.style.backgroundColor = "#EEAFD5";
+
+            setTimeout(() => {
+            const container = document.querySelector(".container");
+              container.style.transition = "background-color 3s ease-in-out";
+              container.style.backgroundColor = "#FF66C3";
+
+              document.body.innerHTML = `
+                <div class="foto">
+                  <img src="amor.jpeg" alt="amor">
+                  <p>¡FELIZ CUMPLEAÑOS AMOR TE AMO MUCHO! 🎉❤️</p>
+                </div>
+              `;
+
+           
+              setTimeout(() => {
+                document.body.innerHTML = `
+                  <div class="container">
+                    <img src="tarta.gif" alt="Tarta de cumpleaños">
+                    <p>ESPERO QUE TENGAS UN DIA INCREIBLE LLENO DE SORPRESAS Y ALEGRÍA.</p>
+                  </div>
+                `;
+
+                setTimeout(() => {
+                  document.body.innerHTML = `
+                    <div class="container">
+                      <img src="besos1.webp" alt="Confeti">
+                      <p>¡TE AMO MUCHO Y DESEO QUE TODOS TUS DESEOS SE HAGAN REALIDAD EN ESTE DIA ESPECIAL</p>
+                    </div>
+                  `;
+                  const heartsContainer = document.createElement('div');
+    heartsContainer.classList.add('hearts');
+    heartsContainer.innerHTML = `
+    <div class="heart fa fa-heart"></div>
+    <div class="heart fa fa-heart"></div>
+    <div class="heart fa fa-heart"></div>
+    <div class="heart fa fa-heart"></div>
+    <div class="heart fa fa-heart"></div>
+    <div class="heart fa fa-heart"></div>
+    <div class="heart fa fa-heart"></div>
+    <div class="heart fa fa-heart"></div>
+    <div class="heart fa fa-heart"></div>
+    <div class="heart fa fa-heart"></div>
+    <div class="heart fa fa-heart"></div>
+    <div class="heart fa fa-heart"></div>
+    `;
+    document.body.appendChild(heartsContainer);
+
+                }, 3500);
+              }, 7000);
+            }, 5000);
+          }, 10000);
+        }, 3000);
+      }, 1000);
+    });
+
+  </script>
+
+  
+
+</html>
